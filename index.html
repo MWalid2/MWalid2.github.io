@@ -50,7 +50,7 @@
       <a href="https://www.linkedin.com/in/walid-maioute-19a4b5252/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
       </a>
-      <a href="mailto:alalguiamina@gmail.com" aria-label="Email">
+      <a href="mailto:Walid.MAIOUTE@emines.um6p.ma" aria-label="Email">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
       </a>
     </div>
@@ -73,7 +73,7 @@
       </p>
       <div class="about-stats">
         <div class="stat"><span class="stat-num">18+</span><span class="stat-label">Public repositories</span></div>
-        <div class="stat"><span class="stat-num">11</span><span class="stat-label">Featured projects</span></div>
+        <div class="stat"><span class="stat-num">14</span><span class="stat-label">Featured projects</span></div>
         <div class="stat"><span class="stat-num">63.6%</span><span class="stat-label">Best cost reduction achieved</span></div>
       </div>
     </div>
@@ -248,14 +248,54 @@
       </article>
 
       <article class="card">
-        <div class="card-icon">🏅</div>
-        <h3>Kaggle Projects Collection</h3>
-        <p>A running collection of Kaggle competition solutions: credit score prediction, fraud detection,
-        house price prediction, and telecom customer churn — covering classification, regression, and imbalanced-data
-        techniques end to end.</p>
-        <div class="tags"><span class="tag">Classification</span><span class="tag">Regression</span><span class="tag">scikit-learn</span></div>
+        <div class="card-icon">💳</div>
+        <h3>German Credit Risk Scoring</h3>
+        <p>Classifies loan applicants as good/bad credit risk on the German Credit dataset (1,000 applicants, 70/30
+        class split, so plain accuracy is misleading against a 70% baseline). Pipeline covers mixed-type preprocessing
+        (Robust/Standard/MinMax scaling, ordinal &amp; target encoding, PCA) across Logistic Regression, KNN, SVM,
+        Decision Trees, and XGBoost, evaluated on AUC-ROC and F1 rather than raw accuracy.</p>
+        <div class="tags"><span class="tag">XGBoost</span><span class="tag">Feature Encoding</span><span class="tag">Imbalanced Data</span></div>
         <div class="card-links">
-          <a href="https://github.com/MWalid2/kaggle_projects" target="_blank" rel="noopener">View on GitHub →</a>
+          <a href="https://github.com/MWalid2/kaggle_projects/blob/main/notebooks/credit_score_prediction.ipynb" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💸</div>
+        <h3>Credit Card Fraud Detection</h3>
+        <p>Detects fraudulent transactions in a severely imbalanced dataset — 492 frauds out of 284,807 transactions
+        (0.172%). Benchmarks Logistic Regression, SVC, Random Forest, XGBoost, LDA, and Naive Bayes inside imbalanced-learn
+        pipelines using SMOTE, random/NearMiss under-sampling, and random over-sampling, evaluated on
+        Precision-Recall AUC rather than accuracy since a trivial "never fraud" model would score 99.8%.</p>
+        <div class="tags"><span class="tag">SMOTE</span><span class="tag">Imbalanced-learn</span><span class="tag">PR-AUC</span></div>
+        <div class="card-links">
+          <a href="https://github.com/MWalid2/kaggle_projects/blob/main/notebooks/fraud_detection.ipynb" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🏠</div>
+        <h3>House Price Prediction</h3>
+        <p>Regression model for Kaggle's "House Prices: Advanced Regression Techniques" (1,460 homes, 80 features,
+        sale prices from $34.9k–$755k). Eighty raw features are organized into 14 domain groups — location, lot,
+        quality, living space, basement, garage, and more — then modeled with Linear/Ridge/Lasso Regression, Random
+        Forest, and XGBoost, tuned via K-fold cross-validation and grid/randomized search.</p>
+        <div class="tags"><span class="tag">Regression</span><span class="tag">Feature Engineering</span><span class="tag">Hyperparameter Tuning</span></div>
+        <div class="card-links">
+          <a href="https://github.com/MWalid2/kaggle_projects/blob/main/notebooks/house_prices_prediction.ipynb" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📞</div>
+        <h3>Telecom Customer Churn Prediction</h3>
+        <p>Predicts subscriber churn on the Orange Telecom dataset (2,666 customers, ~14.5% churn rate) using a
+        held-out 700-customer test set. Separates true numeric features from pseudo-categorical ones (area code,
+        customer service calls), then compares Logistic Regression, KNN, SVM, Decision Trees, Random Forest, and
+        XGBoost with full precision/recall/ROC-AUC evaluation.</p>
+        <div class="tags"><span class="tag">Classification</span><span class="tag">Random Forest</span><span class="tag">ROC-AUC</span></div>
+        <div class="card-links">
+          <a href="https://github.com/MWalid2/kaggle_projects/blob/main/notebooks/orange_telecom_churn.ipynb" target="_blank" rel="noopener">View on GitHub →</a>
         </div>
       </article>
 
