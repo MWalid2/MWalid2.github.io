@@ -113,14 +113,14 @@ a { color: inherit; }
 }
 
 .avatar {
-  width: 84px;
-  height: 84px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .side-name {
