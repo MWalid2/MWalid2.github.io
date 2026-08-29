@@ -538,6 +538,37 @@ a.card:hover .card-links { color: var(--accent); border-color: var(--accent); }
   background: var(--accent);
 }
 
+.pub-list { display: flex; flex-direction: column; gap: 16px; }
+.pub-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  background: var(--bg-alt);
+}
+.pub-title {
+  margin: 0 0 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.5;
+}
+.pub-meta {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+.pub-venue {
+  font-family: var(--mono);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.pub-sidebar-list { display: flex; flex-direction: column; gap: 12px; }
+.pub-sidebar-item { display: flex; flex-direction: column; gap: 2px; }
+.pub-sidebar-item .pub-venue { font-size: 0.82rem; }
+.pub-sidebar-item .pub-status { font-size: 0.78rem; color: var(--text-faint); }
+
 .project-sidebar {
   position: sticky;
   top: 84px;

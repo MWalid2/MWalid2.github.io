@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Predictive Maintenance Pipeline (TNB) : Walid Maioute</title>
-<meta name="description" content="An end-to-end pipeline that turns raw sensor data into failure predictions.">
+<meta name="description" content="Predicting next-cycle defect occurrence in 33 kV distribution switchgear.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#127981;</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,7 @@
     <ul class="nav-links">
       <li><a href="../index.html#about">About</a></li>
       <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#qualifications">Qualifications</a></li>
       <li><a href="../index.html#projects">Projects</a></li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
@@ -36,7 +37,7 @@
     <a href="../index.html#projects" class="back-link">&larr; All projects</a>
     <p class="eyebrow">Predictive Maintenance</p>
     <h1 class="hero-title">&#127981; Predictive Maintenance Pipeline (TNB)</h1>
-    <p class="hero-tagline">An end-to-end pipeline that turns raw sensor data into failure predictions.</p>
+    <p class="hero-tagline">Predicting next-cycle defect occurrence in 33 kV distribution switchgear.</p>
     <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Feature Engineering</span><span class="tag">Multi-task Learning</span></div>
   </section>
 
@@ -44,20 +45,28 @@
     <div class="project-grid">
       <div class="project-main">
         <h2>Overview</h2>
-        <p>A structured predictive maintenance pipeline covering the full path from raw data to a trained model: data cleaning, feature engineering, and multi-task modeling.</p>
+        <p>An end-to-end predictive maintenance pipeline built during a Data Science Research Intern role at Universiti Tenaga Nasional (UNITEN), Malaysia, using multi-state utility data from Tenaga Nasional Berhad (TNB) to predict next-cycle recorded defect occurrence in 33 kV distribution switchgear.</p>
 
         <h2>Problem</h2>
-        <p>Predictive maintenance only pays off if the pipeline behind it is reliable. Raw sensor logs are noisy, and a model built on a badly cleaned dataset will fail silently in production.</p>
+        <p>Predictive maintenance only pays off if the pipeline behind it is reliable. Multi-state utility defect and inspection records are noisy and unevenly recorded, and a model built on a badly cleaned dataset will fail silently in production, exactly the risk this benchmark was built to catch before it reaches the grid.</p>
 
         <h2>Approach</h2>
-        <p>Structured the project as a sequence of dedicated notebooks: data cleaning handles missing values and outliers, feature engineering derives lagged and rolling statistics from equipment signals, a modeling stage trains the failure-prediction models, and a multi-task stage extends the setup to predict several related targets jointly.</p>
+        <p>Structured the project as a sequence of dedicated notebooks: data cleaning handles missing values and outliers in the utility's multi-state records, feature engineering derives lagged and rolling statistics from switchgear inspection history, a modeling stage benchmarks machine learning models for next-cycle defect prediction, and a multi-task stage extends the setup to predict several related failure targets jointly.</p>
 
         <h2>Results</h2>
         <ul>
-          <li>Reusable, staged data-cleaning and feature-engineering pipeline</li>
+          <li>Reusable, staged data-cleaning and feature-engineering pipeline for multi-state utility data</li>
+          <li>Machine learning benchmark for next-cycle defect occurrence on 33 kV distribution switchgear</li>
           <li>Multi-task model sharing representations across related failure targets</li>
-          <li>Modular structure ready to plug in new equipment data</li>
         </ul>
+
+        <h2>Publication</h2>
+        <div class="pub-list">
+          <div class="pub-item">
+            <p class="pub-title">&ldquo;Predicting Next-Cycle Recorded Defect Occurrence in 33 kV Distribution Switchgear: A Machine Learning Benchmark Using Multi-State Utility Data&rdquo;</p>
+            <p class="pub-meta"><span class="pub-venue">ICOCO 2026</span> &middot; Accepted, full paper</p>
+          </div>
+        </div>
 
         <div class="project-nav-footer">
           <a href="../index.html#projects">&larr; Back to all projects</a>
@@ -69,6 +78,15 @@
         <div class="sidebar-block">
           <h3>Stack</h3>
           <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Feature Engineering</span><span class="tag">Multi-task Learning</span></div>
+        </div>
+        <div class="sidebar-block">
+          <h3>Publication</h3>
+          <div class="pub-sidebar-list">
+            <div class="pub-sidebar-item">
+              <span class="pub-venue">ICOCO 2026</span>
+              <span class="pub-status">Accepted, full paper</span>
+            </div>
+          </div>
         </div>
         <div class="sidebar-block">
           <h3>Links</h3>

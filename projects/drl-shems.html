@@ -21,6 +21,7 @@
     <ul class="nav-links">
       <li><a href="../index.html#about">About</a></li>
       <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#qualifications">Qualifications</a></li>
       <li><a href="../index.html#projects">Projects</a></li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
@@ -44,13 +45,13 @@
     <div class="project-grid">
       <div class="project-main">
         <h2>Overview</h2>
-        <p>Reproduces and extends an academic Smart Home Energy Management System (SHEMS) study, adapting it to a building with a separate HVAC unit and water heater instead of a single shared heat pump.</p>
+        <p>Reproduces and extends an academic Smart Home Energy Management System (SHEMS) study, adapting it to a building with a separate HVAC unit and water heater instead of a single shared heat pump. Grew out of a Data Science Research Intern role at Green Energy Park (Ben Guerir, Morocco), where a residential PV, battery, and controllable-load system was first modeled as a Mixed-Integer Linear Program before being extended into this multi-controller, multi-climate study.</p>
 
         <h2>Problem</h2>
-        <p>Managing HVAC and water-heating loads against variable solar generation, occupant comfort, and (in some scenarios) net-metering rules is a sequential decision problem that simple heuristics handle poorly at scale.</p>
+        <p>Managing HVAC and water-heating loads against variable solar generation, occupant comfort, and (in some scenarios) net-metering rules is a sequential decision problem that simple heuristics handle poorly at scale, and that problem looks different depending on climate.</p>
 
         <h2>Approach</h2>
-        <p>Implemented and benchmarked three controllers on the same environment: a Model Predictive Control (MPC) optimizer, a rule-based heuristic controller, and a Deep Reinforcement Learning agent trained with TD3 (Twin Delayed DDPG). Evaluated across two geographic sites (Lyon and Bengueril) and two building types (residential and commercial), including a net-metering regulatory scenario.</p>
+        <p>Implemented and benchmarked three controllers on the same environment: a Model Predictive Control (MPC) optimizer, a rule-based heuristic controller, and a Deep Reinforcement Learning agent trained with TD3 (Twin Delayed DDPG). Evaluated across two geographic sites, Lyon (France) and Ben Guerir (Morocco), and two building types (residential and commercial), including a net-metering regulatory scenario, to compare how each controller performs under two different climatic conditions.</p>
 
         <h2>Results</h2>
         <ul>
@@ -59,6 +60,18 @@
           <li>Comparative evaluation across 2 sites, 2 building types, and 3 controllers</li>
           <li>Documented physics formulations and algorithm details for reproducibility</li>
         </ul>
+
+        <h2>Publication</h2>
+        <div class="pub-list">
+          <div class="pub-item">
+            <p class="pub-title">&ldquo;A Comparative Building Energy Management System: Two Different Climatic Conditions, France and Morocco&rdquo;</p>
+            <p class="pub-meta"><span class="pub-venue">IAQVEC 2026</span> &middot; Accepted, full paper</p>
+          </div>
+          <div class="pub-item">
+            <p class="pub-title">&ldquo;A Comparative Building Energy Management System: Two Different Climatic Conditions, France and Morocco&rdquo;</p>
+            <p class="pub-meta"><span class="pub-venue">IEEE ISC2 2026</span> &middot; Accepted, poster</p>
+          </div>
+        </div>
 
         <div class="project-nav-footer">
           <a href="../index.html#projects">&larr; Back to all projects</a>
@@ -70,6 +83,19 @@
         <div class="sidebar-block">
           <h3>Stack</h3>
           <div class="tags"><span class="tag">Python</span><span class="tag">Deep RL</span><span class="tag">TD3</span><span class="tag">Model Predictive Control</span><span class="tag">Energy Systems</span></div>
+        </div>
+        <div class="sidebar-block">
+          <h3>Publication</h3>
+          <div class="pub-sidebar-list">
+            <div class="pub-sidebar-item">
+              <span class="pub-venue">IAQVEC 2026</span>
+              <span class="pub-status">Accepted, full paper</span>
+            </div>
+            <div class="pub-sidebar-item">
+              <span class="pub-venue">IEEE ISC2 2026</span>
+              <span class="pub-status">Accepted, poster</span>
+            </div>
+          </div>
         </div>
         <div class="sidebar-block">
           <h3>Links</h3>
