@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Walid Maioute: Data Science Portfolio</title>
 <meta name="description" content="Walid Maioute: Industrial Management Engineering student specializing in data science, optimization, and machine learning.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230a0b0d' d='M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -198,42 +198,40 @@
 
         <a class="card card-featured" href="projects/industrial-reliability.html">
           <div class="card-top">
-            <span class="card-icon">⚙️</span>
+            <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M4 18v2h4v-2zm0-4v2h10v-2zm6 4v2h4v-2zm6-4v2h4v-2zm0 4v2h4v-2zM2 22V8l5 4V8l5 4V8l5 4l1-10h3l1 10v10z"/></svg></div>
             <h3>Industrial Reliability &amp; Maintenance Optimization</h3>
           </div>
           <p>Statistical reliability study of a 1,000-unit industrial server fleet. Fitted a Weibull failure distribution
           (β≈2.97, η≈3,958h), validated it with chi-squared / Kolmogorov-Smirnov tests, then used Barlow-Proschan cost modeling
-          and Markov chain simulation to find the optimal preventive-maintenance interval.</p>
-          <p class="card-highlight">📉 1,485h optimal replacement interval → <strong>63.6% cost reduction</strong> vs. corrective-only maintenance.</p>
+          and Markov chain simulation to find the 1,485h replacement interval that cuts maintenance cost by 63.6% versus
+          corrective-only maintenance.</p>
           <div class="tags"><span class="tag">Python</span><span class="tag">SciPy</span><span class="tag">Survival Analysis</span><span class="tag">Markov Chains</span></div>
           <div class="card-links">View project →</div>
         </a>
 
         <a class="card card-featured" href="projects/drl-shems.html">
-          <div class="card-icon">🔋</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 20v-8H2l10-9l10 9h-3v8zm7-14.31l-5 4.5V18h10v-7.81zM11.5 18v-4H9l3.5-7v4H15z"/></svg></div>
           <h3>Deep RL for Smart Home Energy Management</h3>
           <p>Reproduces and extends an academic SHEMS study, comparing three control strategies (Model Predictive Control,
           a rule-based controller, and Deep Reinforcement Learning with TD3) for scheduling HVAC and water-heating loads
           alongside solar generation, across two sites (France and Morocco) and residential/commercial building types.
           Grew out of a research internship at Green Energy Park.</p>
-          <p class="card-highlight">📄 Accepted, full paper at IAQVEC 2026 and poster at IEEE ISC2 2026.</p>
           <div class="tags"><span class="tag">Deep RL</span><span class="tag">TD3</span><span class="tag">MPC</span><span class="tag">Energy Systems</span></div>
           <div class="card-links">View project →</div>
         </a>
 
         <a class="card" href="projects/tnb-predictive-maintenance.html">
-          <div class="card-icon">🏭</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m8.28 5.45l-1.78-.9L7.76 2h8.47l1.27 2.55l-1.78.89L15 4H9zM18.62 8h-4.53l-.79-3h-2.6l-.79 3H5.38L4.1 10.55l1.79.89l.73-1.44h10.76l.72 1.45l1.79-.89zm-.85 14H15.7l-.24-.9L12 15.9l-3.47 5.2l-.23.9H6.23l2.89-11h2.07l-.36 1.35L12 14.1l1.16-1.75l-.35-1.35h2.07zm-6.37-7l-.9-1.35l-1.18 4.48zm3.28 3.12l-1.18-4.48l-.9 1.36z"/></svg></div>
           <h3>Predictive Maintenance Pipeline (TNB)</h3>
           <p>End-to-end predictive maintenance pipeline built during a research internship at Universiti Tenaga Nasional
           (UNITEN), Malaysia: data cleaning, feature engineering, and multi-task modeling to predict next-cycle defect
           occurrence in 33 kV distribution switchgear from multi-state utility data.</p>
-          <p class="card-highlight">📄 Accepted, full paper at ICOCO 2026.</p>
           <div class="tags"><span class="tag">Python</span><span class="tag">Feature Engineering</span><span class="tag">Multi-task Learning</span></div>
           <div class="card-links">View project →</div>
         </a>
 
         <a class="card" href="projects/production-optimization.html">
-          <div class="card-icon">📈</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m3 14l.5.07L8.07 9.5a1.95 1.95 0 0 1 .52-1.91c.78-.79 2.04-.79 2.82 0c.53.52.7 1.26.52 1.91l2.57 2.57l.5-.07c.18 0 .35 0 .5.07l3.57-3.57C19 8.35 19 8.18 19 8a2 2 0 0 1 2-2a2 2 0 0 1 2 2a2 2 0 0 1-2 2c-.18 0-.35 0-.5-.07l-3.57 3.57c.07.15.07.32.07.5a2 2 0 0 1-2 2a2 2 0 0 1-2-2l.07-.5l-2.57-2.57c-.32.07-.68.07-1 0L4.93 15.5L5 16a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2"/></svg></div>
           <h3>Industrial Production Optimization</h3>
           <p>Optimization pipeline for industrial production planning, structured as a reusable Python package
           (src/optimization) with dedicated data, notebook, and reporting layers to turn analysis into decisions.</p>
@@ -242,7 +240,7 @@
         </a>
 
         <a class="card" href="projects/citrus-forecasting.html">
-          <div class="card-icon">🍊</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M9 15.9c-2.1-.2-3.9-1-5-2.3c-.8 0-1.6-.5-1.9-1.3s0-1.6.7-2.1c.1-3 2.8-6.1 6.9-7.5S18 2.1 20 4.4c.8 0 1.6.5 1.9 1.3s0 1.6-.7 2.1q0 1.2-.6 2.4C19.4 9.5 18 9 16.5 9c-3.9 0-7.2 3-7.5 6.9m13 .6c0 3-2.5 5.5-5.5 5.5S11 19.5 11 16.5s2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5M13.3 18l2.3-1.5l-2.3-1.5q-.3.75-.3 1.5c0 .75.1 1 .3 1.5m2.7-.6l-2.1 1.4c.5.6 1.3 1 2.1 1.2zm0-4.3c-.8.1-1.6.5-2.1 1.2l2.1 1.4zm1 2.5l2.1-1.4c-.5-.6-1.3-1-2.1-1.2zm2.1 3.2L17 17.4v2.5c.8-.1 1.6-.5 2.1-1.1m.9-2.3q0-.75-.3-1.5l-2.3 1.5l2.3 1.5q.3-.75.3-1.5"/></svg></div>
           <h3>Citrus Production Forecasting</h3>
           <p>Data pipeline and modeling for citrus ("agrumes") production, structured around a modular src layer
           with dedicated data, notebooks, and results, forecasting agricultural output from historical production data.</p>
@@ -251,7 +249,7 @@
         </a>
 
         <a class="card" href="projects/safran-hr-rag.html">
-          <div class="card-icon">🏢</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3v18h-6v-3.5h-2V21H5V3zm-4 4h2V5h-2zm-4 0h2V5h-2zM7 7h2V5H7zm8 4h2V9h-2zm-4 0h2V9h-2zm-4 0h2V9H7zm8 4h2v-2h-2zm-4 0h2v-2h-2zm-4 0h2v-2H7zm8 4h2v-2h-2zm-8 0h2v-2H7zM21 1H3v22h18z"/></svg></div>
           <h3>THINK TO DEPLOY: HR Analytics &amp; RAG Chatbot (Safran)</h3>
           <p>Two-part AI solution for Safran HR: a training-analytics module running multilingual sentiment analysis
           (FR/AR/EN) on evaluation feedback, and an HR chatbot using retrieval-augmented generation to answer employee
@@ -261,7 +259,7 @@
         </a>
 
         <a class="card" href="projects/custom-support-chatbot.html">
-          <div class="card-icon">🎫</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M2.5 19h19v2h-19zm19.57-9.36c-.21-.8-1.04-1.28-1.84-1.06L14.92 10L8 3.57l-1.91.51l4.14 7.17l-4.97 1.33l-1.97-1.54l-1.45.39l1.82 3.16l.77 1.33l1.6-.42l5.31-1.43l4.35-1.16L21 11.5c.81-.24 1.28-1.06 1.07-1.86"/></svg></div>
           <h3>Custom Support Chatbot: LangGraph Agent</h3>
           <p>An agentic customer-support assistant built on LangGraph with a human-in-the-loop safety layer: sensitive
           actions (bookings, cancellations, updates) pause for explicit user approval before executing. Modular tools
@@ -272,7 +270,7 @@
         </a>
 
         <a class="card" href="projects/coding-agent.html">
-          <div class="card-icon">🤖</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 15.5c0 1.11-.89 2-2 2s-2-.89-2-2s.9-2 2-2s2 .9 2 2m-9-2c-1.1 0-2 .9-2 2s.9 2 2 2s2-.89 2-2s-.89-2-2-2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73c0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2z"/></svg></div>
           <h3>Coding Agent: Gemini Function-Calling CLI</h3>
           <p>A sandboxed AI coding agent powered by Gemini 2.0 Flash: a function-calling loop that lets the model list,
           read, run, and write files through natural-language prompts, capped at 20 iterations and exposed as both a
@@ -282,7 +280,7 @@
         </a>
 
         <a class="card" href="projects/biomedical-simulation.html">
-          <div class="card-icon">🧬</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m12 3.77l-.75.84S9.97 6.06 8.68 7.94S6 12.07 6 14.23a6 6 0 0 0 6 6a6 6 0 0 0 6-6c0-2.16-1.39-4.41-2.68-6.29s-2.57-3.33-2.57-3.33zm0 3.13c.44.52.84.95 1.68 2.17c1.21 1.76 2.32 4 2.32 5.16c0 2.22-1.78 4-4 4s-4-1.78-4-4c0-1.16 1.11-3.4 2.32-5.16c.84-1.22 1.24-1.65 1.68-2.17"/></svg></div>
           <h3>Stochastic Diffusion &amp; Convection Simulation</h3>
           <p>Biomedical transport-phenomena study comparing theoretical vs. stochastic particle diffusion through
           irregular and fractal (Koch curve) boundaries, modeling mass transport across complex biological surfaces.
@@ -294,7 +292,7 @@
         </a>
 
         <a class="card" href="projects/credit-risk.html">
-          <div class="card-icon">💳</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M13 19c0-.34.04-.67.09-1H3v-6h16v1c.7 0 1.37.13 2 .35V6c0-1.11-.89-2-2-2H3c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h10.09c-.05-.33-.09-.66-.09-1M3 6h16v2H3zm14.75 16L15 19l1.16-1.16l1.59 1.59l3.59-3.59l1.16 1.41z"/></svg></div>
           <h3>German Credit Risk Scoring</h3>
           <p>Classifies loan applicants as good/bad credit risk on the German Credit dataset (1,000 applicants, 70/30
           class split, so plain accuracy is misleading against a 70% baseline). Pipeline covers mixed-type preprocessing
@@ -305,7 +303,7 @@
         </a>
 
         <a class="card" href="projects/fraud-detection.html">
-          <div class="card-icon">💸</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M21 11c0 5.55-3.84 10.74-9 12c-5.16-1.26-9-6.45-9-12V5l9-4l9 4zm-9 10c3.75-1 7-5.46 7-9.78V6.3l-7-3.12L5 6.3v4.92C5 15.54 8.25 20 12 21M11 7h2v6h-2zm0 8h2v2h-2z"/></svg></div>
           <h3>Credit Card Fraud Detection</h3>
           <p>Detects fraudulent transactions in a severely imbalanced dataset: 492 frauds out of 284,807 transactions
           (0.172%). Benchmarks Logistic Regression, SVC, Random Forest, XGBoost, LDA, and Naive Bayes inside imbalanced-learn
@@ -316,7 +314,7 @@
         </a>
 
         <a class="card" href="projects/house-price-prediction.html">
-          <div class="card-icon">🏠</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M10 2v2.26l2 1.33V4h10v15h-5v2h7V2zM7.5 5L0 10v11h15V10zM14 6v.93L15.61 8H16V6zm4 0v2h2V6zM7.5 7.5L13 11v8h-3v-6H5v6H2v-8zM18 10v2h2v-2zm0 4v2h2v-2z"/></svg></div>
           <h3>House Price Prediction</h3>
           <p>Regression model for Kaggle's "House Prices: Advanced Regression Techniques" (1,460 homes, 80 features,
           sale prices from $34.9k to $755k). Eighty raw features are organized into 14 domain groups (location, lot,
@@ -327,7 +325,7 @@
         </a>
 
         <a class="card" href="projects/telecom-churn.html">
-          <div class="card-icon">📞</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20 15.5c-1.2 0-2.5-.2-3.6-.6h-.3c-.3 0-.5.1-.7.3l-2.2 2.2c-2.8-1.5-5.2-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1c-.3-1.1-.5-2.4-.5-3.6c0-.5-.5-1-1-1H4c-.5 0-1 .5-1 1c0 9.4 7.6 17 17 17c.5 0 1-.5 1-1v-3.5c0-.5-.5-1-1-1M5 5h1.5c.1.9.3 1.8.5 2.6L5.8 8.8C5.4 7.6 5.1 6.3 5 5m14 14c-1.3-.1-2.6-.4-3.8-.8l1.2-1.2c.8.2 1.7.4 2.6.4zm-2-7v-2h2v2zm0-4V2h2v6z"/></svg></div>
           <h3>Telecom Customer Churn Prediction</h3>
           <p>Predicts subscriber churn on the Orange Telecom dataset (2,666 customers, ~14.5% churn rate) using a
           held-out 700-customer test set. Separates true numeric features from pseudo-categorical ones (area code,
@@ -338,7 +336,7 @@
         </a>
 
         <a class="card" href="projects/retinopathy-detection.html">
-          <div class="card-icon">👁️</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0"/></svg></div>
           <h3>Diabetic Retinopathy Detection</h3>
           <p>ResNet50-based CNN trained on the APTOS 2019 dataset to classify retinal fundus images into five diabetic
           retinopathy severity stages, with augmentation, learning-rate scheduling, and evaluation via confusion
@@ -348,11 +346,11 @@
         </a>
 
         <a class="card" href="projects/object-recognizer.html">
-          <div class="card-icon">🖼️</div>
+          <div class="card-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 9c.7 0 1.29-.24 1.77-.73c.49-.48.73-1.07.73-1.77c0-.67-.24-1.27-.73-1.77c-.48-.5-1.07-.73-1.77-.73c-.67 0-1.27.23-1.77.73S13 5.83 13 6.5c0 .7.23 1.29.73 1.77c.5.49 1.1.73 1.77.73m3.81-.09l3.1 3.09L21 13.41l-3.14-3.1c-.78.47-1.58.69-2.39.69c-1.25 0-2.31-.42-3.17-1.3c-.85-.87-1.3-1.93-1.3-3.2c0-1.23.45-2.3 1.33-3.17C13.2 2.45 14.27 2 15.5 2c1.27 0 2.33.45 3.2 1.33c.88.87 1.3 1.94 1.3 3.17c0 .83-.22 1.63-.69 2.41M16.5 18h-11l2.75-3.5l1.97 2.33l2.72-3.52zm1.5-5l2 2v5c0 .55-.19 1-.59 1.4c-.41.39-.88.6-1.41.6H4c-.55 0-1-.21-1.4-.6c-.39-.4-.6-.85-.6-1.4V6c0-.53.21-1 .6-1.41C3 4.19 3.45 4 4 4h5.5c-.3.64-.47 1.31-.5 2H4v14h14z"/></svg></div>
           <h3>Object Recognizer: VGG16 Transfer Learning</h3>
-          <p>Image classifier built on a pre-trained VGG16 backbone: frozen convolutional layers for feature
-          extraction, custom dense head, then selective fine-tuning, built after benchmarking against a from-scratch
-          CNN baseline for accuracy and convergence speed.</p>
+          <p>Image classifier for CIFAR-10, built on a pre-trained VGG16 backbone: frozen convolutional layers for feature
+          extraction, custom dense head, then selective fine-tuning, beating a from-scratch CNN baseline by 22.5 points
+          of test accuracy (63.1% → 85.6%).</p>
           <div class="tags"><span class="tag">Transfer Learning</span><span class="tag">VGG16</span><span class="tag">Keras</span></div>
           <div class="card-links">View project →</div>
         </a>

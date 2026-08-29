@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Predictive Maintenance Pipeline (TNB) : Walid Maioute</title>
-<meta name="description" content="Predicting next-cycle defect occurrence in 33 kV distribution switchgear.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#127981;</text></svg>">
+<meta name="description" content="Predicting next-cycle defect occurrence in 33 kV distribution switchgear from multi-state utility data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230a0b0d' d='M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,9 +27,10 @@
   <section class="hero project-hero container">
     <a href="../index.html#projects" class="back-link">&larr; All projects</a>
     <p class="eyebrow">Predictive Maintenance</p>
-    <h1 class="hero-title">&#127981; Predictive Maintenance Pipeline (TNB)</h1>
-    <p class="hero-tagline">Predicting next-cycle defect occurrence in 33 kV distribution switchgear.</p>
-    <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Feature Engineering</span><span class="tag">Multi-task Learning</span></div>
+    <div class="hero-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m8.28 5.45l-1.78-.9L7.76 2h8.47l1.27 2.55l-1.78.89L15 4H9zM18.62 8h-4.53l-.79-3h-2.6l-.79 3H5.38L4.1 10.55l1.79.89l.73-1.44h10.76l.72 1.45l1.79-.89zm-.85 14H15.7l-.24-.9L12 15.9l-3.47 5.2l-.23.9H6.23l2.89-11h2.07l-.36 1.35L12 14.1l1.16-1.75l-.35-1.35h2.07zm-6.37-7l-.9-1.35l-1.18 4.48zm3.28 3.12l-1.18-4.48l-.9 1.36z"/></svg></div>
+    <h1 class="hero-title">Predictive Maintenance Pipeline (TNB)</h1>
+    <p class="hero-tagline">Predicting next-cycle defect occurrence in 33 kV distribution switchgear from multi-state utility data.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Pandas</span><span class="tag">Multi-task Learning</span></div>
   </section>
 
   <section class="section container project-body">
@@ -39,17 +40,13 @@
         <p>An end-to-end predictive maintenance pipeline built during a Data Science Research Intern role at Universiti Tenaga Nasional (UNITEN), Malaysia, using multi-state utility data from Tenaga Nasional Berhad (TNB) to predict next-cycle recorded defect occurrence in 33 kV distribution switchgear.</p>
 
         <h2>Problem</h2>
-        <p>Predictive maintenance only pays off if the pipeline behind it is reliable. Multi-state utility defect and inspection records are noisy and unevenly recorded, and a model built on a badly cleaned dataset will fail silently in production, exactly the risk this benchmark was built to catch before it reaches the grid.</p>
+        <p>Distribution utilities record switchgear defects (hotspot, tracking, corona, mechanical vibration) and forced outages across thousands of functional locations and regional datasets that don't share a common key. Multi-state records like these are noisy and unevenly captured, and a maintenance model built on a badly integrated dataset will fail silently in production, exactly the risk this benchmark was built to catch before it reaches the grid.</p>
 
         <h2>Approach</h2>
-        <p>Structured the project as a sequence of dedicated notebooks: data cleaning handles missing values and outliers in the utility's multi-state records, feature engineering derives lagged and rolling statistics from switchgear inspection history, a modeling stage benchmarks machine learning models for next-cycle defect prediction, and a multi-task stage extends the setup to predict several related failure targets jointly.</p>
+        <ol class="step-list"><li><strong>Integrate multi-state utility data</strong><span>Merge QR03 defect/event records with LGBNet forced-outage records across 11 Malaysian regional datasets (Kuala Lumpur, Johor, Kelantan, Melaka, and others), matching functional locations across sources that don't share a common key.</span></li><li><strong>Engineer a monthly panel</strong><span>Build one row per functional location per active month, with defect and outage counts per channel plus recency features (months since the last event on each channel), yielding a 62,744-row, 12-month sequence &times; 71-feature tabular panel.</span></li><li><strong>Frame it as multi-task prediction</strong><span>Predict 5 defect/outage channels (hotspot, tracking, corona, mechanical vibration, outage) at 3 forecast horizons (1, 3, and 6 months ahead), 15 binary &ldquo;will this recur&rdquo; targets sharing one input panel.</span></li><li><strong>Benchmark classical ML</strong><span>Grid-search Logistic Regression, SVM, Random Forest, and XGBoost under both class-weighting and SMOTE (8 configurations), scored on PR-AUC (Average Precision) with 95% bootstrap confidence intervals.</span></li><li><strong>Benchmark deep architectures</strong><span>Compare a class-weighted perceptron, a tuned DNN, and sequence models (GRU, LSTM, Deep LSTM, attention-LSTM) plus a hybrid tabular+sequence model, all trained on identical splits and scored on the same held-out test set.</span></li></ol>
 
         <h2>Results</h2>
-        <ul>
-          <li>Reusable, staged data-cleaning and feature-engineering pipeline for multi-state utility data</li>
-          <li>Machine learning benchmark for next-cycle defect occurrence on 33 kV distribution switchgear</li>
-          <li>Multi-task model sharing representations across related failure targets</li>
-        </ul>
+        <p><strong>Classical models</strong> &mdash; grid-searched, single-target (hotspot) validation-set PR-AUC with 95% bootstrap CI:</p><div class="table-wrap"><table class="result-table"><thead><tr><th class="">Model</th><th class="">Resampling</th><th class="num">PR-AUC (val)</th></tr></thead><tbody><tr><td>Logistic Regression</td><td>Class weights</td><td class="num">0.454 [0.320, 0.628]</td></tr><tr><td>SVM</td><td>Class weights</td><td class="num">0.599 [0.433, 0.773]</td></tr><tr><td>Random Forest</td><td>Class weights</td><td class="num">0.680 [0.517, 0.807]</td></tr><tr class="best"><td>XGBoost</td><td>Class weights</td><td class="num">0.722 [0.572, 0.841]</td></tr><tr><td>Logistic Regression</td><td>SMOTE</td><td class="num">0.502 [0.346, 0.686]</td></tr><tr><td>SVM</td><td>SMOTE</td><td class="num">0.577 [0.405, 0.730]</td></tr><tr><td>Random Forest</td><td>SMOTE</td><td class="num">0.692 [0.533, 0.832]</td></tr><tr><td>XGBoost</td><td>SMOTE</td><td class="num">0.682 [0.510, 0.825]</td></tr></tbody></table></div><p><strong>Architecture comparison</strong> &mdash; every model explored, refit on train+validation and scored once on the held-out test set (Average Precision):</p><div class="table-wrap"><table class="result-table"><thead><tr><th class="">Architecture</th><th class="">Variant</th><th class="num">Avg. Precision (test)</th></tr></thead><tbody><tr class="best"><td>Perceptron</td><td>Class weights</td><td class="num">0.565</td></tr><tr><td>DNN</td><td>Grid search</td><td class="num">0.546</td></tr><tr><td>Perceptron</td><td>SMOTE</td><td class="num">0.546</td></tr><tr><td>GRU</td><td>&mdash;</td><td class="num">0.524</td></tr><tr><td>Deep Attention LSTM</td><td>&mdash;</td><td class="num">0.495</td></tr><tr><td>Hybrid LSTM</td><td>Tabular + sequence</td><td class="num">0.484</td></tr><tr><td>LSTM</td><td>&mdash;</td><td class="num">0.475</td></tr><tr><td>Deep LSTM</td><td>&mdash;</td><td class="num">0.241</td></tr></tbody></table></div><div class="callout"><strong>Honest finding:</strong> added architectural complexity didn't pay off here, a simple class-weighted perceptron (0.565 AP) edged out every recurrent architecture, including a purpose-built hybrid tabular+sequence model. Across the full 15-task multi-task benchmark (5 defect channels &times; 3 horizons), the mean PR-AUC across tasks was close for every architecture (Attention LSTM 0.127, GRU 0.126, Random Forest 0.121, LSTM 0.117), with GRU winning outright on 5 of 15 tasks and Random Forest and Attention LSTM tying for second at 4 wins each, evidence that no single architecture dominates uniformly across defect types and horizons.</div>
 
         <h2>Publication</h2>
         <div class="pub-list">
@@ -68,7 +65,7 @@
       <aside class="project-sidebar">
         <div class="sidebar-block">
           <h3>Stack</h3>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Feature Engineering</span><span class="tag">Multi-task Learning</span></div>
+          <div class="tags"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Pandas</span><span class="tag">Multi-task Learning</span></div>
         </div>
         <div class="sidebar-block">
           <h3>Publication</h3>

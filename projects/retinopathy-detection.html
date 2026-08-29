@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diabetic Retinopathy Detection : Walid Maioute</title>
-<meta name="description" content="Classifying retinal images into five diabetic retinopathy severity stages.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128065;&#65039;</text></svg>">
+<meta name="description" content="Staging diabetic retinopathy severity from retinal photographs with a fine-tuned ResNet50.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230a0b0d' d='M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,8 +27,9 @@
   <section class="hero project-hero container">
     <a href="../index.html#projects" class="back-link">&larr; All projects</a>
     <p class="eyebrow">Computer Vision / Medical Imaging</p>
-    <h1 class="hero-title">&#128065;&#65039; Diabetic Retinopathy Detection</h1>
-    <p class="hero-tagline">Classifying retinal images into five diabetic retinopathy severity stages.</p>
+    <div class="hero-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0"/></svg></div>
+    <h1 class="hero-title">Diabetic Retinopathy Detection</h1>
+    <p class="hero-tagline">Staging diabetic retinopathy severity from retinal photographs with a fine-tuned ResNet50.</p>
     <div class="tags"><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">ResNet50</span><span class="tag">CNN</span><span class="tag">Medical Imaging</span></div>
   </section>
 
@@ -36,19 +37,16 @@
     <div class="project-grid">
       <div class="project-main">
         <h2>Overview</h2>
-        <p>A CNN-based classifier that stages diabetic retinopathy severity from retinal fundus photographs, aimed at supporting earlier screening.</p>
+        <p>A CNN-based classifier that stages diabetic retinopathy severity from retinal fundus photographs, trained on the APTOS 2019 Blindness Detection dataset, aimed at supporting earlier screening.</p>
 
         <h2>Problem</h2>
-        <p>Diabetic retinopathy damages retinal blood vessels and can cause blindness if untreated, but manual screening of fundus images is slow and does not scale to population-level screening.</p>
+        <p>Diabetic retinopathy damages retinal blood vessels and can cause blindness if untreated, but manual screening of fundus images is slow and doesn't scale to population-level screening.</p>
 
         <h2>Approach</h2>
-        <p>Fine-tuned a ResNet50 convolutional network (TensorFlow/Keras) on the APTOS 2019 Blindness Detection dataset, classifying images into five severity stages: No DR, Mild, Moderate, Severe, and Proliferative DR. Applied resizing and augmentation during preprocessing, and used learning-rate scheduling with early stopping during training.</p>
+        <ol class="step-list"><li><strong>Preprocess fundus images</strong><span>Apply Gaussian blur and a circular crop to normalize lighting variation and remove irrelevant background outside the retina.</span></li><li><strong>Augment the training set</strong><span>Rotation, zoom, and shift augmentation to compensate for the limited size typical of medical-imaging datasets.</span></li><li><strong>Warm-start on a frozen ResNet50</strong><span>Pretrain just a new classification head on top of ImageNet-pretrained ResNet50 features, with the backbone frozen.</span></li><li><strong>Fine-tune the full network</strong><span>Unfreeze ResNet50's layers and continue training at a low learning rate, with early stopping and learning-rate reduction callbacks.</span></li><li><strong>Evaluate on held-out APTOS data</strong><span>Score accuracy and Cohen's Kappa across the five severity stages (No DR, Mild, Moderate, Severe, Proliferative DR), with confusion matrices and ROC curves for per-class inspection.</span></li><li><strong>Ship a GUI</strong><span>A lightweight interface for uploading a fundus image and getting a stage prediction.</span></li></ol>
 
         <h2>Results</h2>
-        <ul>
-          <li>Evaluated with accuracy, precision, recall, F1, and Cohen's Kappa</li>
-          <li>Confusion matrices and ROC curves used to inspect per-class performance</li>
-        </ul>
+        <div class="table-wrap"><table class="result-table"><thead><tr><th class="">Split</th><th class="num">Accuracy</th><th class="num">Cohen's Kappa</th></tr></thead><tbody><tr><td>Train</td><td class="num">87.5%</td><td class="num">0.894</td></tr><tr class="best"><td>Test</td><td class="num">81.4%</td><td class="num">0.855</td></tr></tbody></table></div><p>The train-test gap is modest, about 6 points of accuracy and 0.04 of Kappa, a sign the fine-tuned model generalizes reasonably rather than memorizing the training set, and a Kappa of 0.855 on a 5-class ordinal severity scale indicates strong agreement with the ground-truth grading, not just high raw accuracy.</p>
 
         <div class="project-nav-footer">
           <a href="../index.html#projects">&larr; Back to all projects</a>

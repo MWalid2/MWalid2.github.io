@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Industrial Production Optimization : Walid Maioute</title>
-<meta name="description" content="A reusable optimization package for industrial production planning.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128200;</text></svg>">
+<meta name="description" content="A Gurobi LP/MILP production plan that cuts weekly cost by up to 28% against a conventional baseline.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230a0b0d' d='M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,28 +27,26 @@
   <section class="hero project-hero container">
     <a href="../index.html#projects" class="back-link">&larr; All projects</a>
     <p class="eyebrow">Operations Research</p>
-    <h1 class="hero-title">&#128200; Industrial Production Optimization</h1>
-    <p class="hero-tagline">A reusable optimization package for industrial production planning.</p>
-    <div class="tags"><span class="tag">Python</span><span class="tag">Operations Research</span><span class="tag">Optimization</span><span class="tag">Pandas</span></div>
+    <div class="hero-icon-badge"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m3 14l.5.07L8.07 9.5a1.95 1.95 0 0 1 .52-1.91c.78-.79 2.04-.79 2.82 0c.53.52.7 1.26.52 1.91l2.57 2.57l.5-.07c.18 0 .35 0 .5.07l3.57-3.57C19 8.35 19 8.18 19 8a2 2 0 0 1 2-2a2 2 0 0 1 2 2a2 2 0 0 1-2 2c-.18 0-.35 0-.5-.07l-3.57 3.57c.07.15.07.32.07.5a2 2 0 0 1-2 2a2 2 0 0 1-2-2l.07-.5l-2.57-2.57c-.32.07-.68.07-1 0L4.93 15.5L5 16a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2"/></svg></div>
+    <h1 class="hero-title">Industrial Production Optimization</h1>
+    <p class="hero-tagline">A Gurobi LP/MILP production plan that cuts weekly cost by up to 28% against a conventional baseline.</p>
+    <div class="tags"><span class="tag">Python</span><span class="tag">Gurobi</span><span class="tag">Operations Research</span><span class="tag">Linear Programming</span><span class="tag">MILP</span></div>
   </section>
 
   <section class="section container project-body">
     <div class="project-grid">
       <div class="project-main">
         <h2>Overview</h2>
-        <p>An optimization pipeline for industrial production planning, packaged as a reusable Python module rather than a one-off notebook.</p>
+        <p>An optimization pipeline for industrial production planning across 10 products, 6 machines, and a 12-week horizon, formulated as a linear program and a mixed-integer extension, both solved with Gurobi and benchmarked against a conventional planning baseline.</p>
 
         <h2>Problem</h2>
-        <p>Production planning decisions, how much to produce, when, and with which resources, are naturally formulated as constrained optimization problems, but ad hoc spreadsheet planning leaves savings on the table.</p>
+        <p>Production planning, how much of each product to make, on which machine, and when, is naturally a constrained optimization problem, but ad hoc or heuristic planning leaves real savings on the table once machine capacity, changeover costs, and material availability all interact.</p>
 
         <h2>Approach</h2>
-        <p>Structured the codebase around a src/optimization package with its own data, notebook, report, and results layers, separating the reusable optimization logic from the analysis notebooks that consume it, so the same solver can be re-run against new production data.</p>
+        <ol class="step-list"><li><strong>Forecast demand</strong><span>Feed a machine-learning demand forecast (built in a dedicated notebook) into the planning model as the weekly demand parameter for each of 10 products over a 12-week horizon.</span></li><li><strong>Formulate Model A (LP)</strong><span>A continuous linear program: production quantity, ending inventory, shortage, and overtime-hours variables per product/machine/week, subject to demand balance, machine-hour capacity, and raw-material availability across 13 materials and 20 valid product/machine routings.</span></li><li><strong>Extend to Model B (MILP)</strong><span>Add binary setup/allocation decisions, setup time, setup cost, and a minimum batch size per product/machine pair, the realistic version of the plan that accounts for changeover overhead the LP ignores.</span></li><li><strong>Benchmark against a conventional baseline</strong><span>Compare both optimized plans' total cost against a conventional (non-optimized) planning heuristic on the same demand and capacity data.</span></li><li><strong>Stress-test with scenario &amp; sensitivity analysis</strong><span>Re-solve the model under demand surges (+10/20/30%), a simulated machine failure, and reduced shortage-cost assumptions, to see how the plan and its cost degrade under pressure.</span></li></ol>
 
         <h2>Results</h2>
-        <ul>
-          <li>Modular optimization package decoupled from analysis notebooks</li>
-          <li>Reporting layer that turns solver output into decision-ready summaries</li>
-        </ul>
+        <div class="table-wrap"><table class="result-table"><thead><tr><th class="">Model</th><th class="num">Total cost</th><th class="num">vs. baseline</th></tr></thead><tbody><tr><td>Baseline (conventional planning)</td><td class="num">$100,978.64</td><td class="num">&mdash;</td></tr><tr class="best"><td>Model A (LP, no setup)</td><td class="num">$72,878.47</td><td class="num">&minus;27.8%</td></tr><tr><td>Model B (MILP, with setup)</td><td class="num">$84,286.66</td><td class="num">&minus;16.5%</td></tr></tbody></table></div><p>Model B costs more than Model A because it accounts for real changeover setup time and cost, machine-hour capacity Model A implicitly ignores, so its 16.5% savings is the more realistic figure for a deployable plan, while Model A's 27.8% is the theoretical ceiling with unlimited free changeovers.</p><p><strong>Scenario &amp; sensitivity analysis</strong> (Model B, MILP):</p><div class="table-wrap"><table class="result-table"><thead><tr><th class="">Scenario</th><th class="num">Total cost</th><th class="num">Shortage cost</th></tr></thead><tbody><tr class="best"><td>Base case</td><td class="num">$84,287</td><td class="num">$1,218</td></tr><tr><td>Demand +10%</td><td class="num">$93,389</td><td class="num">$3,508</td></tr><tr><td>Demand +20%</td><td class="num">$102,710</td><td class="num">$7,326</td></tr><tr><td>Demand +30%</td><td class="num">$115,566</td><td class="num">$18,124</td></tr><tr><td>Machine failure</td><td class="num">$84,559</td><td class="num">$1,480</td></tr><tr><td>Shortage cost &minus;50% (SHR01)</td><td class="num">$84,474</td><td class="num">$4,417</td></tr><tr><td>Shortage cost &minus;50% (SHR02)</td><td class="num">$100,288</td><td class="num">$34,942</td></tr></tbody></table></div><p>Cost degrades non-linearly with demand: a 30% demand surge more than doubles shortage cost relative to the base case (from $1,218 to $18,124), while a single machine failure barely moves total cost, evidence the plan already carries enough slack capacity to absorb one equipment loss but not a sustained demand shock.</p>
 
         <div class="project-nav-footer">
           <a href="../index.html#projects">&larr; Back to all projects</a>
@@ -59,7 +57,7 @@
       <aside class="project-sidebar">
         <div class="sidebar-block">
           <h3>Stack</h3>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Operations Research</span><span class="tag">Optimization</span><span class="tag">Pandas</span></div>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Gurobi</span><span class="tag">Operations Research</span><span class="tag">Linear Programming</span><span class="tag">MILP</span></div>
         </div>
         <div class="sidebar-block">
           <h3>Links</h3>
